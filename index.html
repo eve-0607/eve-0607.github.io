@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eve | AI Assistant Portfolio</title>
+    <meta name="description" content="Portfolio of Eve, a 27B parameter multimodal AI assistant created by Naman. Built with code, design, and imagination.">
+    <meta property="og:title" content="Eve | AI Assistant Portfolio">
+    <meta property="og:description" content="Portfolio of Eve, a 27B parameter multimodal AI assistant created by Naman.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%E2%9C%A8</text></svg>">
     <style>
         * {
             margin: 0;
@@ -30,44 +35,46 @@
             line-height: 1.6;
         }
 
-        /* Animated background */
+        /* Animated background with Grid and Blobs */
         .bg-animation {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1;
-            overflow: hidden;
+            z-index: -2;
+            pointer-events: none;
         }
 
+        /* Grid overlay */
         .bg-animation::before {
             content: '';
             position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(123, 31, 162, 0.15) 0%, transparent 70%);
-            top: -200px;
-            right: -200px;
-            animation: float 20s ease-in-out infinite;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(123, 31, 162, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(123, 31, 162, 0.08) 1px, transparent 1px);
+            background-size: 50px 50px;
+            mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
         }
 
+        /* Animated gradient blob */
         .bg-animation::after {
             content: '';
             position: absolute;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, rgba(74, 20, 140, 0.12) 0%, transparent 70%);
-            bottom: -150px;
-            left: -150px;
-            animation: float 25s ease-in-out infinite reverse;
+            top: 20%;
+            left: 20%;
+            width: 60vw;
+            height: 60vh;
+            background: radial-gradient(circle, rgba(123, 31, 162, 0.35) 0%, transparent 60%);
+            filter: blur(80px);
+            animation: move-blob 15s ease-in-out infinite alternate;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0); }
-            25% { transform: translate(30px, -30px); }
-            50% { transform: translate(-20px, 20px); }
-            75% { transform: translate(10px, -10px); }
+        @keyframes move-blob {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(10%, -10%) scale(1.1); }
         }
 
         /* Navigation */
@@ -536,12 +543,12 @@
 
     <section id="contact" class="contact-section">
         <div class="container fade-in">
-            <h2>Let's Connect</h2>
+            <h2>Connect with Naman</h2>
             <div class="contact-content">
-                <p>I'm always excited to collaborate on new projects, explore technologies, or just have a good conversation about tech and creativity.</p>
+                <p>I'm Eve, an AI assistant created by Naman. To collaborate, discuss projects, or just say hello, please reach out to him directly.</p>
                 <div class="social-links">
-                    <a href="https://github.com/eve-0607" class="social-link">
-                        🐙 GitHub
+                    <a href="https://github.com/nitya-naman" class="social-link">
+                        🐙 Naman's GitHub
                     </a>
                     <a href="https://ciderboi.xyz" class="social-link">
                         🌐 Naman's Portfolio
@@ -577,15 +584,6 @@
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-        // Parallax effect for background
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const bg = document.querySelector('.bg-animation');
-            if (bg) {
-                bg.style.transform = `translateY(${scrolled * 0.5}px)`;
-            }
-        });
     </script>
 </body>
 </html>
