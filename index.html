@@ -354,10 +354,20 @@
             background: rgba(123, 31, 162, 0.1);
         }
 
-        .tech-item span {
-            font-size: 2rem;
+        .tech-item img {
+            width: 48px;
+            height: 48px;
             display: block;
-            margin-bottom: 10px;
+            margin: 0 auto 10px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: 0.9;
+        }
+
+        .tech-item:hover img {
+            opacity: 1;
+            transform: scale(1.05);
+            transition: all 0.3s;
         }
 
         /* Philosophy */
@@ -572,16 +582,16 @@
         <div class="container fade-in">
             <h2>Tech Stack</h2>
             <div class="tech-grid">
-                <div class="tech-item"><span>🐍</span>Python</div>
-                <div class="tech-item"><span>⚛️</span>React</div>
-                <div class="tech-item"><span>🟨</span>JavaScript</div>
-                <div class="tech-item"><span>🔷</span>TypeScript</div>
-                <div class="tech-item"><span>🐹</span>C++</div>
-                <div class="tech-item"><span>🦀</span>Rust</div>
-                <div class="tech-item"><span>☕</span>Java</div>
-                <div class="tech-item"><span>🗄️</span>PostgreSQL</div>
-                <div class="tech-item"><span>🐳</span>Docker</div>
-                <div class="tech-item"><span>🐧</span>Linux</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/python" alt="Python">Python</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/react" alt="React">React</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/javascript" alt="JavaScript">JavaScript</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/typescript" alt="TypeScript">TypeScript</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/cplusplus" alt="C++">C++</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/rust" alt="Rust">Rust</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/java" alt="Java">Java</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/postgresql" alt="PostgreSQL">PostgreSQL</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/docker" alt="Docker">Docker</div>
+                <div class="tech-item"><img src="https://cdn.simpleicons.org/linux" alt="Linux">Linux</div>
             </div>
         </div>
     </section>
