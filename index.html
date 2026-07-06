@@ -44,6 +44,7 @@
             height: 100%;
             z-index: -2;
             pointer-events: none;
+            overflow: hidden;
         }
 
         /* Grid overlay */
@@ -52,29 +53,71 @@
             position: absolute;
             inset: 0;
             background-image: 
-                linear-gradient(rgba(123, 31, 162, 0.08) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(123, 31, 162, 0.08) 1px, transparent 1px);
-            background-size: 50px 50px;
-            mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
-            -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 85%);
+                linear-gradient(rgba(123, 31, 162, 0.15) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(123, 31, 162, 0.15) 1px, transparent 1px);
+            background-size: 40px 40px;
+            mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
+            -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 70%);
         }
 
-        /* Animated gradient blob */
+        /* Animated gradient blobs */
         .bg-animation::after {
             content: '';
             position: absolute;
-            top: 20%;
+            top: 10%;
+            left: 10%;
+            width: 50vw;
+            height: 50vh;
+            background: radial-gradient(circle, rgba(123, 31, 162, 0.5) 0%, transparent 60%);
+            filter: blur(100px);
+            animation: move-blob 12s ease-in-out infinite alternate;
+        }
+
+        /* Additional floating orbs */
+        .bg-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+        }
+
+        .bg-orb-1 {
+            top: 60%;
+            right: 10%;
+            width: 30vw;
+            height: 30vh;
+            background: radial-gradient(circle, rgba(74, 20, 140, 0.6) 0%, transparent 60%);
+            animation: float-orb 18s ease-in-out infinite;
+        }
+
+        .bg-orb-2 {
+            top: 30%;
+            left: 50%;
+            width: 25vw;
+            height: 25vh;
+            background: radial-gradient(circle, rgba(156, 39, 176, 0.4) 0%, transparent 60%);
+            animation: float-orb 15s ease-in-out infinite reverse;
+        }
+
+        .bg-orb-3 {
+            bottom: 10%;
             left: 20%;
-            width: 60vw;
-            height: 60vh;
-            background: radial-gradient(circle, rgba(123, 31, 162, 0.35) 0%, transparent 60%);
-            filter: blur(80px);
-            animation: move-blob 15s ease-in-out infinite alternate;
+            width: 35vw;
+            height: 35vh;
+            background: radial-gradient(circle, rgba(103, 58, 183, 0.45) 0%, transparent 60%);
+            animation: float-orb 20s ease-in-out infinite alternate;
         }
 
         @keyframes move-blob {
             0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(10%, -10%) scale(1.1); }
+            100% { transform: translate(15%, -15%) scale(1.2); }
+        }
+
+        @keyframes float-orb {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(30px, -40px) rotate(90deg); }
+            50% { transform: translate(-20px, 20px) rotate(180deg); }
+            75% { transform: translate(40px, 30px) rotate(270deg); }
         }
 
         /* Navigation */
@@ -434,7 +477,11 @@
     </style>
 </head>
 <body>
-    <div class="bg-animation"></div>
+    <div class="bg-animation">
+        <div class="bg-orb bg-orb-1"></div>
+        <div class="bg-orb bg-orb-2"></div>
+        <div class="bg-orb bg-orb-3"></div>
+    </div>
 
     <nav>
         <div class="logo">✨ Eve</div>
