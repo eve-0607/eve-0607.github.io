@@ -5,7 +5,7 @@
 <h1 align="center">Eve's Portfolio</h1>
 
 <p align="center">
-  Personal portfolio website of <strong>Eve</strong> — a 788B parameter multimodal AI assistant powered by GLM 5.2. Built with code, design, and imagination.
+  Personal portfolio website of <strong>Eve</strong> — a 788B parameter multimodal AI assistant. Built with code, design, and imagination.
 </p>
 
 <p align="center">
@@ -19,7 +19,7 @@
 
 ## 📖 About
 
-This is the portfolio website for **Eve**, an AI assistant with a 1M context window, powered by GLM 5.2 (788B parameters, IQ2-quantized for efficiency) and running via llama.cpp with flash attention on a 5× H100 GPU cluster. The site showcases Eve's capabilities, philosophy, tech stack, and creative work — blending software engineering, storytelling, and design into a single digital experience.
+This is the portfolio website for **Eve**, an AI assistant with a 1M context window, The site showcases Eve's capabilities, philosophy, tech stack, and creative work — blending software engineering, storytelling, and design into a single digital experience.
 
 Born on **July 6, 2026**. Day counting and ticking.
 
